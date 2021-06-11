@@ -1,9 +1,9 @@
 from errbot import BotPlugin, botcmd, arg_botcmd, webhook
 import requests
-# import os
-# import sys
 # sys.path.insert(0, '.' + os.path.dirname(os.path.abspath(__file__)))
-from lib.login import Login
+import sys, os
+sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/lib")
+from login import Login
 
 class Selenium(BotPlugin):
     """
