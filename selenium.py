@@ -1,7 +1,6 @@
 from errbot import BotPlugin, botcmd, arg_botcmd, webhook
 import requests
 from module.login import Login
-from pprint import pprint
 
 class Selenium(BotPlugin):
     """
@@ -30,12 +29,12 @@ class Selenium(BotPlugin):
         """This function is to run automated login testing in Opensource CMS."""
         
         frm = message.frm
-        result = Login()
+        result = Login.process
 
         resp = "| key      | value\n"
         resp += "| -------- | --------\n"
         resp += f"| Triggered By | `{frm.person}`\n"
         resp += f"| Test Module | Login\n"
         resp += f"| Test Logs| {result}\n"
-        pprint(result)
+
         return resp

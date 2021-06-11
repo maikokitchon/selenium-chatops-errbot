@@ -32,7 +32,7 @@ class Login():
         }
     }
 
-    def __init__(self):
+    def process(self):
         
         driver = webdriver.Remote(f"{self.SETTINGS['remote_driver']}", webdriver.DesiredCapabilities.CHROME)
 
