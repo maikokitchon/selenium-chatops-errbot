@@ -27,8 +27,8 @@ class Login():
             }
         },
         'test_account': {
-            'username'  : 'opensourcecms',
-            'password'  : 'opensourcecms'
+            'username'  : 'Admin',
+            'password'  : 'admin123'
         }
     }
 
