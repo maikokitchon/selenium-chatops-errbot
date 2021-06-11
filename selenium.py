@@ -1,6 +1,6 @@
 from errbot import BotPlugin, botcmd, arg_botcmd, webhook
 import requests
-from module.login import Login as lg
+from module.login import *
 
 class Selenium(BotPlugin):
     """
@@ -30,7 +30,8 @@ class Selenium(BotPlugin):
         
         frm = message.frm
         
-        result = lg.Login().do()
+        loginObj = Login()
+        result = loginObj.execute_test()
 
         resp = "| key      | value\n"
         resp += "| -------- | --------\n"
