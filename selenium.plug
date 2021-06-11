@@ -1,0 +1,9 @@
+[Core]
+name = selenium
+module = selenium
+
+[Documentation]
+description = selenium
+
+[Python]
+version = 3
