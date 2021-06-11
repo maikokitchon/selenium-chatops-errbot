@@ -36,47 +36,50 @@ class Login():
         
         driver = webdriver.Remote(f"{self.SETTINGS['remote_driver']}", webdriver.DesiredCapabilities.CHROME)
 
-        print(self.get_datetime() + ' [INFO] Starting smoke testing.')
+        response += self.get_datetime() + " [INFO] Starting smoke testing.\n"
 
         driver.get(f"{self.SETTINGS['web']['login']}")
-        print(self.get_datetime() + ' [INFO] Logging in url:' + driver.current_url + ' with page title:' + driver.title + '.')
+        response += self.get_datetime() + " [INFO] Logging in url:" + driver.current_url + " with page title:" + driver.title + ".\n"
         driver.save_screenshot(f"{self.SETTINGS['screenshot']['path']}/{self.SETTINGS['screenshot']['captured_images']['login_form']}")
 
-        print(self.get_datetime() + ' [INFO] Typing a username.')
+        response += self.get_datetime() + " [INFO] Typing a username.\n"
         input_username = driver.find_element_by_xpath('//*[@id="txtUsername"]')
         input_username.clear()
         input_username.send_keys(f"{self.SETTINGS['test_account']['username']}")
         
-        print(self.get_datetime() + ' [INFO] Typing a password.')
+        response += self.get_datetime() + " [INFO] Typing a password.\n"
         input_password = driver.find_element_by_xpath('//*[@id="txtPassword"]')
         input_password.clear()
         input_password.send_keys(f"{self.SETTINGS['test_account']['password']}")
         driver.save_screenshot(f"{self.SETTINGS['screenshot']['path']}/{self.SETTINGS['screenshot']['captured_images']['login_prefilled']}")
 
-        print(self.get_datetime() + ' [INFO] Clicking the login button.')
+        response += self.get_datetime() + " [INFO] Clicking the login button.\n"
         driver.find_element_by_xpath('//*[@id="btnLogin"]').click()
         
-        print(self.get_datetime() + ' [INFO] Waiting for redirection.')
+        response += self.get_datetime() + " [INFO] Waiting for redirection.\n"
 
         try:
             WebDriverWait(driver,20).until(presence_of_element_located((By.XPATH, "/html/body/div[1]/div[3]/div/div[1]/h1")))
         except:
-            print(self.get_datetime() + ' [ERROR] Unable to redirect.')
+            response += self.get_datetime() + " [ERROR] Unable to redirect.\n"
             driver.save_screenshot(f"{self.SETTINGS['screenshot']['path']}/{self.SETTINGS['screenshot']['captured_images']['error']}")
             driver.close()
-            sys.exit(self.get_datetime() + ' [ERROR] Automated smoke testing is unsuccessful. Process terminated.')
+            response += self.get_datetime() + " [ERROR] Automated smoke testing is unsuccessful. Process terminated.\n"
+            return response
 
         if driver.current_url == f"{self.SETTINGS['web']['dashboard']}":
-            print(self.get_datetime() + ' [INFO] Login successful and was redirected to page:' + driver.current_url + ' with page title:' + driver.title + '.')
+            response += self.get_datetime() + " [INFO] Login successful and was redirected to page:" + driver.current_url + " with page title:" + driver.title + ".\n"
             driver.save_screenshot(f"{self.SETTINGS['screenshot']['path']}/{self.SETTINGS['screenshot']['captured_images']['login_success']}")
         else:
             print(self.get_datetime() + ' [ERROR] Unable to login.')
             driver.save_screenshot(f"{self.SETTINGS['screenshot']['path']}/{self.SETTINGS['screenshot']['captured_images']['error']}")
             driver.close()
-            sys.exit(self.get_datetime() + ' [ERROR] Automated smoke testing is unsuccessful. Process terminated.')
+            response += self.get_datetime() + " [ERROR] Automated smoke testing is unsuccessful. Process terminated.\n"
+            return response
 
-        print(self.get_datetime() + ' [INFO] Automated smoke testing is completed successfully. Closing the selenium webdriver.')
+        response += self.get_datetime() + " [INFO] Automated smoke testing is completed successfully. Closing the selenium webdriver.\n"
         driver.close()
+        return response
 
     def get_datetime(self):
 
