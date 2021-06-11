@@ -30,7 +30,8 @@ class Selenium(BotPlugin):
         
         frm = message.frm
         
-        result = Login.execute_test()
+        x = Login()
+        result = x.execute_test()
 
         resp = "| key      | value\n"
         resp += "| -------- | --------\n"
