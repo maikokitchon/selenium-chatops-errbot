@@ -29,6 +29,11 @@ class Selenium(BotPlugin):
         """This function is to run automated login testing in Opensource CMS."""
         
         result = Login()
-        print(result)
+
+        resp = "| key      | value\n"
+        resp += "| -------- | --------\n"
+        resp += f"| Triggered By | `{frm.person}`\n"
+        resp += f"| Test Module | Login\n"
+        resp += f"| Test Logs| {result}\n"
         
-        return "This is working."
+        return resp
