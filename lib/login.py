@@ -36,7 +36,7 @@ class Login():
         
         driver = webdriver.Remote(f"{self.SETTINGS['remote_driver']}", webdriver.DesiredCapabilities.CHROME)
 
-        response += self.get_datetime() + " [INFO] Starting smoke testing.\n"
+        response = self.get_datetime() + " [INFO] Starting smoke testing.\n"
 
         driver.get(f"{self.SETTINGS['web']['login']}")
         response += self.get_datetime() + " [INFO] Logging in url:" + driver.current_url + " with page title:" + driver.title + ".\n"
