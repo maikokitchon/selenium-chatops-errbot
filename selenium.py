@@ -1,6 +1,6 @@
 from errbot import BotPlugin, botcmd, arg_botcmd, webhook
 import requests
-from module.login import Login
+from module.login import Login as lg
 
 class Selenium(BotPlugin):
     """
@@ -29,8 +29,8 @@ class Selenium(BotPlugin):
         """This function is to run automated login testing in Opensource CMS."""
         
         frm = message.frm
-        LoginObject = Login()
-        result = LoginObject.do()
+        
+        result = lg.Login().do()
 
         resp = "| key      | value\n"
         resp += "| -------- | --------\n"
