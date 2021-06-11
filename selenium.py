@@ -30,7 +30,7 @@ class Selenium(BotPlugin):
         
         frm = message.frm
         LoginObject = Login()
-        result = LoginObject.process()
+        result = LoginObject.do()
 
         resp = "| key      | value\n"
         resp += "| -------- | --------\n"
