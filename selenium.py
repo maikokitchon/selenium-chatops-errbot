@@ -1,6 +1,7 @@
 from errbot import BotPlugin, botcmd, arg_botcmd, webhook
 import requests
 from module.login import Login
+from pprint import pprint
 
 class Selenium(BotPlugin):
     """
@@ -36,5 +37,5 @@ class Selenium(BotPlugin):
         resp += f"| Triggered By | `{frm.person}`\n"
         resp += f"| Test Module | Login\n"
         resp += f"| Test Logs| {result}\n"
-        
+        pprint(result)
         return resp
