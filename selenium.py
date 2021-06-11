@@ -29,8 +29,8 @@ class Selenium(BotPlugin):
         """This function is to run automated login testing in Opensource CMS."""
         
         frm = message.frm
-        do = Login().process
-        result = do()
+        LoginObject = Login()
+        result = LoginObject.process()
 
         resp = "| key      | value\n"
         resp += "| -------- | --------\n"
