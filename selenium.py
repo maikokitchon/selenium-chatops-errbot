@@ -1,6 +1,6 @@
 from errbot import BotPlugin, botcmd, arg_botcmd, webhook
 import requests
-from module.login import Login
+from login import Login
 
 class Selenium(BotPlugin):
     """
