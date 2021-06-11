@@ -39,11 +39,12 @@ class Selenium(BotPlugin):
         x = Login()
         result = x.execute_test()
 
-        resp = "| key      | value\n"
-        resp += "| -------- | --------\n"
-        resp += f"| Triggered By | `{frm.person}`\n"
-        resp += f"| Test Module | Login\n"
+        # resp = "| key      | value\n"
+        # resp += "| -------- | --------\n"
+        # resp += f"| Triggered By | `{frm.person}`\n"
+        # resp += f"| Test Module | Login\n"
 
-        resp += f"Automated test log result:\n ```{result}\n"
+        resp = "Triggered By: " + frm.person + "\n"
+        resp += "Automated test log result: \n ```" + result
 
         return resp
