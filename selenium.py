@@ -1,6 +1,7 @@
 from errbot import BotPlugin, botcmd, arg_botcmd, webhook
 import requests
-from login import Login
+# from login import Login
+import os
 
 class Selenium(BotPlugin):
     """
@@ -27,16 +28,19 @@ class Selenium(BotPlugin):
     @botcmd
     def selenium_test_osc_login(self, message, service=None):
         """This function is to run automated login testing in Opensource CMS."""
+        WORK_DIR = os.getcwd()
+        THIS_FILE_DIR = os.path.dirname(os.path.abspath(__file__))
+        print('WORK_DIR', WORK_DIR)
+        print('THIS_FILE_DIR', THIS_FILE_DIR)
+        # frm = message.frm
         
-        frm = message.frm
-        
-        x = Login()
-        result = x.execute_test()
+        # x = Login()
+        # result = x.execute_test()
 
-        resp = "| key      | value\n"
-        resp += "| -------- | --------\n"
-        resp += f"| Triggered By | `{frm.person}`\n"
-        resp += f"| Test Module | Login\n"
-        resp += f"| Test Logs| {result}\n"
+        # resp = "| key      | value\n"
+        # resp += "| -------- | --------\n"
+        # resp += f"| Triggered By | `{frm.person}`\n"
+        # resp += f"| Test Module | Login\n"
+        # resp += f"| Test Logs| {result}\n"
 
-        return resp
+        # return resp
