@@ -11,8 +11,8 @@ class Login():
 
     SETTINGS = {
         'web': {
-            'login'     : 'https://s1.demo.opensourcecms.com/orangehrm/symfony/web/index.php/auth/login',
-            'dashboard' : 'https://s1.demo.opensourcecms.com/orangehrm/symfony/web/index.php/dashboard',
+            'login'     : 'https://opensource-demo.orangehrmlive.com/index.php/auth/login',
+            'dashboard' : 'https://opensource-demo.orangehrmlive.com/index.php/dashboard',
             'logout'    : ''
         },
         'remote_driver' : 'http://192.168.1.3:4444/wd/hub',
@@ -59,7 +59,7 @@ class Login():
         print(self.get_datetime() + ' [INFO] Waiting for redirection.')
 
         try:
-            WebDriverWait(driver,20).until(presence_of_element_located((By.XPATH, "/html/body/div[1]/div[3]/div/div[2]/div[1]/div/div/div/fieldset/div/div/table/tbody/tr/td[1]/div/a/img")))
+            WebDriverWait(driver,20).until(presence_of_element_located((By.XPATH, "/html/body/div[1]/div[3]/div/div[1]/h1")))
         except:
             print(self.get_datetime() + ' [ERROR] Unable to redirect.')
             driver.save_screenshot(f"{self.SETTINGS['screenshot']['path']}/{self.SETTINGS['screenshot']['captured_images']['error']}")
