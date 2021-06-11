@@ -3,7 +3,7 @@ name = selenium
 module = selenium
 
 [Documentation]
-description = selenium
+description = Management commands related to Selenium automated testing
 
 [Python]
 version = 3
