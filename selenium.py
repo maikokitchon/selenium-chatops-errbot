@@ -1,5 +1,6 @@
 from errbot import BotPlugin, botcmd, arg_botcmd, webhook
 import requests
+from module.login import Login
 
 class Selenium(BotPlugin):
     """
@@ -18,7 +19,16 @@ class Selenium(BotPlugin):
         super(Selenium, self).activate()
 
     @botcmd
-    def testcon(self, message, service=None):
+    def selenium_testcon(self, message, service=None):
         """This function is just for connection testing."""
 
         return "This is working. You have successfully installed Selenium automated testing plugin."
+
+    @botcmd
+    def selenium_test_osc_login(self, message, service=None):
+        """This function is to run automated login testing in Opensource CMS."""
+        
+        result = Login()
+        print(result)
+        
+        return "This is working."
