@@ -28,6 +28,7 @@ class Selenium(BotPlugin):
     def selenium_test_osc_login(self, message, service=None):
         """This function is to run automated login testing in Opensource CMS."""
         
+        frm = message.frm
         result = Login()
 
         resp = "| key      | value\n"
