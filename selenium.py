@@ -43,6 +43,7 @@ class Selenium(BotPlugin):
         resp += "| -------- | --------\n"
         resp += f"| Triggered By | `{frm.person}`\n"
         resp += f"| Test Module | Login\n"
-        resp += f"| Test Logs| {result}\n"
+
+        resp += f"Automated test log result:\n ```{result}\n"
 
         return resp
