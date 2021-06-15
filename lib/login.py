@@ -15,7 +15,7 @@ class Login():
             'dashboard' : 'https://opensource-demo.orangehrmlive.com/index.php/dashboard',
             'logout'    : ''
         },
-        'remote_driver' : 'http://192.168.1.3:4444/wd/hub',
+        'remote_driver' : 'http://192.168.1.9:4444/wd/hub',
         'screenshot': {
             'path'      : 'output',
             'captured_images': {
