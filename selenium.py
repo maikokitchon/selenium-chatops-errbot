@@ -35,7 +35,7 @@ class Selenium(BotPlugin):
         # print('WORK_DIR', WORK_DIR)
         # print('THIS_FILE_DIR', THIS_FILE_DIR)
 
-        self.send(mess.frm, 'I am now executing a test. Please wait...')
+        self.send(message.frm, 'I am now executing a test. Please wait...')
 
         frm = message.frm
         
