@@ -42,23 +42,16 @@ class Selenium(BotPlugin):
         x = Login()
         result = x.execute_test()
 
-        # resp = "| key      | value\n"
-        # resp += "| -------- | --------\n"
-        # resp += f"| Triggered By | `{frm.person}`\n"
-        # resp += f"| Test Module | Login\n"
-
-        resp = "Triggered By: " + frm.person + "\n"
-        resp += "Automated test log result: \n ```" + result
-
-        self.send_card( title='Title + Body',
-                        body='text body to put in the card',
-                        thumbnail='/chatbot/data/plugins/maikokitchon/selenium-chatops-errbot/lib/output/1-login-form.png',
-                        image='/chatbot/data/plugins/maikokitchon/selenium-chatops-errbot/lib/output/1-login-form.png',
-                        fields=(('First Key','Value1'), ('Second Key','Value2')),
+        self.send_card( title='Test Result',
+                        body='This is a test result of scenario ::Login.',
+                        fields=(('Scenario','Login'), ('Result','Successful')),
                         color='green',
                         in_reply_to=message
         )
 
-        self.send_stream_request(message.frm, open('/output/screenshots.zip', 'rb'), name='screenshots.zip',stream_type='application/zip')
+        resp = "Triggered By: " + frm.person + "\n"
+        resp += "Automated test log result: \n ```" + result
+
+        self.send_stream_request(message.frm, open('/output/screenshots.zip', 'rb'), name='screenshots.zip', stream_type='application/zip')
 
         return resp
