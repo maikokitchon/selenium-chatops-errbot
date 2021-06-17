@@ -79,6 +79,7 @@ class Login():
 
         response += self.get_datetime() + " [INFO] Automated smoke testing is completed successfully. Closing the selenium webdriver.\n"
         driver.close()
+
         return response
 
     def get_datetime(self):
