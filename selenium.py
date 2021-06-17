@@ -49,9 +49,8 @@ class Selenium(BotPlugin):
 
         self.send_card( title='Title + Body',
                         body='text body to put in the card',
-                        thumbnail='https://raw.githubusercontent.com/errbotio/errbot/master/docs/_static/errbot.png',
-                        image='https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png',
-                        link='http://www.google.com',
+                        thumbnail='/chatbot/data/plugins/maikokitchon/selenium-chatops-errbot/lib/output/1-login-form.png',
+                        image='/chatbot/data/plugins/maikokitchon/selenium-chatops-errbot/lib/output/1-login-form.png',
                         fields=(('First Key','Value1'), ('Second Key','Value2')),
                         color='red',
                         in_reply_to=message
