@@ -17,7 +17,7 @@ class Login():
         },
         'remote_driver' : 'http://192.168.1.9:4444/wd/hub',
         'screenshot': {
-            'path'      : 'output',
+            'path'      : '/chatbot/data/plugins/maikokitchon/selenium-chatops-errbot/lib/output',
             'captured_images': {
                 'login_form'      : '1-login-form.png',
                 'login_prefilled' : '2-login-prefilled.png',
