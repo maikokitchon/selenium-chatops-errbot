@@ -34,6 +34,9 @@ class Selenium(BotPlugin):
         # THIS_FILE_DIR = os.path.dirname(os.path.abspath(__file__))
         # print('WORK_DIR', WORK_DIR)
         # print('THIS_FILE_DIR', THIS_FILE_DIR)
+
+        self.send(mess.frm, 'I am now executing a test. Please wait...')
+
         frm = message.frm
         
         x = Login()
@@ -55,5 +58,7 @@ class Selenium(BotPlugin):
                         color='red',
                         in_reply_to=message
         )
+
+        self.send_stream_request(message.frm, open('/chatbot/data/plugins/maikokitchon/selenium-chatops-errbot/lib/output/1-login-form.png', 'r'), name='1-login-form.png', stream_type='application/png')
 
         return resp
