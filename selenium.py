@@ -59,6 +59,6 @@ class Selenium(BotPlugin):
                         in_reply_to=message
         )
 
-        self.send_stream_request(message.frm, open('/chatbot/data/plugins/maikokitchon/selenium-chatops-errbot/lib/output/1-login-form.png', 'r'), name='1-login-form.png', stream_type='application/png')
+        self.send_stream_request(message.frm, open('/chatbot/data/plugins/maikokitchon/selenium-chatops-errbot/lib/output/1-login-form.png', 'r'), name='login-form.png')
 
         return resp
