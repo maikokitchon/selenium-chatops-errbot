@@ -55,10 +55,10 @@ class Selenium(BotPlugin):
                         thumbnail='/chatbot/data/plugins/maikokitchon/selenium-chatops-errbot/lib/output/1-login-form.png',
                         image='/chatbot/data/plugins/maikokitchon/selenium-chatops-errbot/lib/output/1-login-form.png',
                         fields=(('First Key','Value1'), ('Second Key','Value2')),
-                        color='red',
+                        color='green',
                         in_reply_to=message
         )
 
-        self.send_stream_request(message.frm, open('/chatbot/data/plugins/maikokitchon/selenium-chatops-errbot/lib/output/1-login-form.png', 'r'), name='login-form.png')
+        self.send_stream_request(message.frm, open('/output/screenshots.zip', 'r'), name='login-form.png',stream_type='application/zip')
 
         return resp
