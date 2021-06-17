@@ -35,7 +35,8 @@ class Selenium(BotPlugin):
         # print('WORK_DIR', WORK_DIR)
         # print('THIS_FILE_DIR', THIS_FILE_DIR)
 
-        self.send(message.frm, 'I am now executing a test. Please wait...')
+        #self.send('chatopspoc', 'Testing in progress. Please wait...')
+        self.send(message, 'Testing in progress. Please wait...')
 
         frm = message.frm
         
@@ -43,7 +44,7 @@ class Selenium(BotPlugin):
         result = x.execute_test()
 
         self.send_card( title='Test Result',
-                        body='This is a test result of scenario ::Login.',
+                        body='This is the test result of scenario ::Login.',
                         fields=(('Scenario','Login'), ('Result','Successful')),
                         color='green',
                         in_reply_to=message
