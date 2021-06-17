@@ -59,6 +59,6 @@ class Selenium(BotPlugin):
                         in_reply_to=message
         )
 
-        self.send_stream_request(message.frm, open('/output/screenshots.zip', 'r'), name='screenshots.zip',stream_type='application/zip')
+        self.send_stream_request(message.frm, open('/output/screenshots.zip', 'rb'), name='screenshots.zip',stream_type='application/zip')
 
         return resp
