@@ -36,7 +36,7 @@ class Selenium(BotPlugin):
         # print('THIS_FILE_DIR', THIS_FILE_DIR)
 
         #self.send('chatopspoc', 'Testing in progress. Please wait...')
-        self.send(message, 'Testing in progress. Please wait...')
+        self.send(self.build_identifier(message.frm.person), 'Testing in progress. Please wait...')
 
         frm = message.frm
         
